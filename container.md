@@ -1,7 +1,7 @@
 # 服务容器
 
 - [介绍](#introduction)
-- [基本用法](#binding)
+- [绑定](#binding)
     - [绑定实例的接口](#binding-interfaces-to-implementations)
     - [上下文绑定](#contextual-binding)
     - [标签](#tagging)
@@ -9,7 +9,7 @@
 - [容器事件](#container-events)
 
 <a name="introduction"></a>
-## Introduction
+## 介绍
 
 Laravel 服务容器是管理类依赖的强力工具。依赖注入是比较专业的说法，真正意思是将类依赖透过构造器或 「setter」 方法注入。
 
@@ -53,12 +53,13 @@ Laravel 服务容器是管理类依赖的强力工具。依赖注入是比较专
         }
     }
 
-In this example, the `PurchasePodcast` job needs to send e-mails when a podcast is purchased. So, we will **inject** a service that is able to send e-mails. Since the service is injected, we are able to easily swap it out with another implementation. We are also able to easily "mock", or create a dummy implementation of the mailer when testing our application.
 
-A deep understanding of the Laravel service container is essential to building a powerful, large application, as well as for contributing to the Laravel core itself.
+在这个例子中，当播客被购买时， `PurchasePodcast` 命令处理器需要发送一封电子邮件。所以，我们将注入一个服务来提供这个能力。当这个服务被**注入**以后，我们就可以轻易地切换到不同的实现。当测试我们的应用程序时，我们同样也可以轻易地「模拟」，或者创建一个虚拟的发信服务实现，来帮助我们进行测试。
+
+如果要创建一个强大并且大型的应用，或者对 Laravel 的内核做贡献，首先必须对 Laravel 的服务容器进行深入了解。
 
 <a name="binding"></a>
-## Binding
+## 绑定
 
 Almost all of your service container bindings will be registered within [service providers](/docs/{{version}}/providers), so all of these examples will demonstrate using the container in that context. However, there is no need to bind classes into the container if they do not depend on any interfaces. The container does not need to be instructed how to build these objects, since it can automatically resolve such "concrete" objects using PHP's reflection services.
 
