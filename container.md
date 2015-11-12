@@ -1,19 +1,20 @@
-# Service Container
+# 服务容器
 
-- [Introduction](#introduction)
-- [Binding](#binding)
-    - [Binding Interfaces To Implementations](#binding-interfaces-to-implementations)
-    - [Contextual Binding](#contextual-binding)
-    - [Tagging](#tagging)
-- [Resolving](#resolving)
-- [Container Events](#container-events)
+- [介绍](#introduction)
+- [基本用法](#binding)
+    - [绑定实例的接口](#binding-interfaces-to-implementations)
+    - [上下文绑定](#contextual-binding)
+    - [标签](#tagging)
+- [实际应用](#resolving) ?? 
+- [容器事件](#container-events)
 
 <a name="introduction"></a>
 ## Introduction
 
-The Laravel service container is a powerful tool for managing class dependencies and performing dependency injection. Dependency injection is a fancy phrase that essentially means this: class dependencies are "injected" into the class via the constructor or, in some cases, "setter" methods.
+Laravel 服务容器是管理类依赖的强力工具。依赖注入是比较专业的说法，真正意思是将类依赖透过构造器或 「setter」 方法注入。
 
-Let's look at a simple example:
+让我们来看一个简单的例子：
+
 
     <?php
 
